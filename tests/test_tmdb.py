@@ -22,7 +22,7 @@ def test_get_single_movie(monkeypatch):
 
     call_tmdb_api_mock = Mock()
     call_tmdb_api_mock.return_value = mock_movie_details
-    monkeypatch.setattr("tmdb_client.call_tmdb_api", call_tmdb_api_mock)
+    monkeypatch.setattr("tmdb_client.get_single_movie", call_tmdb_api_mock)
 
     movie_details = tmdb_client.get_single_movie("dummy")
 
@@ -33,7 +33,7 @@ def test_get_movie_images(monkeypatch):
 
     call_tmdb_api_mock = Mock()
     call_tmdb_api_mock.return_value = mock_movie_images
-    monkeypatch.setattr("tmdb_client.call_tmdb_api", call_tmdb_api_mock)
+    monkeypatch.setattr("tmdb_client.get_movie_images", call_tmdb_api_mock)
 
     movie_images = tmdb_client.get_movie_images("dummy")
 
@@ -44,7 +44,7 @@ def test_get_single_movie_cast(monkeypatch):
 
     call_tmdb_api_mock = Mock()
     call_tmdb_api_mock.return_value = mock_movie_cast
-    monkeypatch.setattr("tmdb_client.call_tmdb_api", call_tmdb_api_mock)
+    monkeypatch.setattr("tmdb_client.get_single_movie_cast", call_tmdb_api_mock)
 
     movie_cast = tmdb_client.get_single_movie_cast("dummy")
 
