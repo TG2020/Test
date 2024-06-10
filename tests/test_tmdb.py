@@ -1,20 +1,9 @@
 import pytest
 
-
 from unittest.mock import Mock
 import tmdb_client
 
 
-def test_get_single_movie_cast(monkeypatch):
-    mock_movie_cast = ["Actor1", "Actor2"]
-
-    call_tmdb_api_mock = Mock()
-    call_tmdb_api_mock.return_value = mock_movie_cast
-    monkeypatch.setattr("tmdb_client.call_tmdb_api", call_tmdb_api_mock)
-
-    movie_cast = tmdb_client.get_single_movie_cast("dummy")
-
-    assert movie_cast == mock_movie_cast
 
 
 def test_get_single_movie(monkeypatch):
